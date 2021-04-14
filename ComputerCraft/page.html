@@ -1,0 +1,38 @@
+<!Doctype html>
+<html>
+    <head>
+        <script>
+        const ws = new WebSocket("ws://localhost:8081")
+        function moveTurtleForward(){
+            ws.send("return turtle.forward()")
+        }
+        function moveTurtleRight(){
+            ws.send("return turtle.turnRight()")
+        }
+        function moveTurtleLeft(){
+            ws.send("return turtle.turnLeft()")
+        }
+        function moveTurtleBack(){
+            ws.send("return turtle.back()")
+        }
+        function moveTurtleUp(){
+            ws.send("return turtle.up()")
+        }
+        function moveTurtleDown(){
+            ws.send("return turtle.down()")
+        }
+        ws.addEventListener("message", msg=>{
+            console.log(msg.data)
+        })
+        </script>
+    </head>
+    <body>
+        <button style = "font-size: 50px;" onclick="moveTurtleForward()">forward </button>
+        <button style = "font-size: 50px;" onclick="moveTurtleRight()">turn right </button>
+        <button style = "font-size: 50px;" onclick="moveTurtleLeft()">Turn left </button>
+        <button style = "font-size: 50px;" onclick="moveTurtleBack()">Back </button>
+        <button style = "font-size: 50px;" onclick="moveTurtleUp()">Up </button>
+        <button style = "font-size: 50px;" onclick="moveTurtleDown()">Down </button>
+       
+    </body>
+</html>
