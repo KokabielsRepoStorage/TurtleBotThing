@@ -21,6 +21,15 @@
         function moveTurtleDown(){
             ws.send("return turtle.down()")
         }
+        function DigDown(){
+            ws.send("return turtle.digDown()")
+        }
+        function DigUp(){
+            ws.send("return turtle.digUp()")
+        }
+        function DigForward(){
+            ws.send("return turtle.dig()")
+        }
         ws.addEventListener("message", msg=>{
             console.log(msg.data)
         })
@@ -29,10 +38,14 @@
     <body>
         <button style = "font-size: 50px;" onclick="moveTurtleForward()">forward </button>
         <button style = "font-size: 50px;" onclick="moveTurtleRight()">turn right </button>
-        <button style = "font-size: 50px;" onclick="moveTurtleLeft()">Turn left </button>
-        <button style = "font-size: 50px;" onclick="moveTurtleBack()">Back </button>
+        <button style = "font-size: 50px;" onclick="moveTurtleLeft()">turn left </button>
+        <button style = "font-size: 50px;" onclick="moveTurtleBack()">back </button>
+        <button style = "font-size: 50px;" onclick="moveTurtleForward()">forward </button>
         <button style = "font-size: 50px;" onclick="moveTurtleUp()">Up </button>
         <button style = "font-size: 50px;" onclick="moveTurtleDown()">Down </button>
+        <button style = "font-size: 50px;" onclick="DigForward()">Dig </button>
+        <button style = "font-size: 50px;" onclick="DigDown()">Dig Down </button>
+        <button style = "font-size: 50px;" onclick="DigUp()">Dig Up </button>
        
     </body>
 </html>
